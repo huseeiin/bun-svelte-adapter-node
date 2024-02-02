@@ -7,6 +7,7 @@
     "build": "bun --bun vite build"
   },
   "dependencies": {
+    "@calle.wester/svelte-adapter-bun": "^0.5.7",
     "@sveltejs/adapter-node": "^4.0.1",
     "@sveltejs/kit": "^2.5.0",
     "svelte": "^4.2.9",
