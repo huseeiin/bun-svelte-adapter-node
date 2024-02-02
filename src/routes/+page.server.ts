@@ -1,1 +1,3 @@
-export const load = () => ({ version: Bun.version });
+export const load = () => ({
+  version: typeof Bun !== "undefined" ? Bun.version : ":(",
+});
