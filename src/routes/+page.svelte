@@ -1,1 +1,1 @@
-<h1>Hello World</h1>
+<h1>Bun version is {Bun.version}</h1>
