@@ -20,7 +20,7 @@ export default ({ out } = { out: "build" }) => {
       const server = builder.getServerDirectory();
 
       const index = await Bun.file(
-        `${import.meta.dirname}/src/bun-adapter/index.js`
+        `${import.meta.dirname}/bun-adapter/index.js`
       ).text();
 
       const entry = `${out}/index.js`;
