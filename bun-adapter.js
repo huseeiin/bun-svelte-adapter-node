@@ -33,11 +33,7 @@ export default (opts = {}) => {
           .replace("SERVER", `${server}/index.js`)
       );
 
-      Bun.spawn(
-        `bun build ${entry} --external uWebSockets.js --target bun --outdir ${out}`.split(
-          " "
-        )
-      );
+      Bun.spawn(`bun build ${entry} --target bun --outdir ${out}`.split(" "));
 
       rmSync(serverDir, { recursive: true, force: true });
     },
