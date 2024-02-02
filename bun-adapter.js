@@ -3,9 +3,7 @@ import { rmSync } from "fs";
 /**
  * @param opts {{out:string}}
  */
-export default (opts = {}) => {
-  const { out = "build" } = opts;
-
+export default ({ out } = { out: "build" }) => {
   /** @type {import('@sveltejs/kit').Adapter} */
   const adapter = {
     name: "bun",
@@ -22,7 +20,7 @@ export default (opts = {}) => {
       const server = builder.getServerDirectory();
 
       const index = await Bun.file(
-        `${import.meta.dirname}/bun-adapter/index.js`
+        `${import.meta.dirname}/src/bun-adapter/index.js`
       ).text();
 
       const entry = `${out}/index.js`;

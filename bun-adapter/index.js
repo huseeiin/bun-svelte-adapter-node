@@ -2,6 +2,9 @@ import { Server } from "SERVER";
 import { manifest } from "MANIFEST";
 import { totalist } from "totalist";
 
+/**
+ * @type {Record<string,string>}
+ */
 const assets = {};
 
 totalist(
@@ -11,7 +14,10 @@ totalist(
 );
 
 const server = new Server(manifest);
-server.init({ env: Bun.env });
+server.init({
+  // @ts-ignore
+  env: Bun.env,
+});
 
 Bun.serve({
   fetch(req) {
@@ -20,7 +26,7 @@ Bun.serve({
     return pathname in assets
       ? new Response(Bun.file(assets[pathname]))
       : server.respond(req, {
-          getClientAddress: () => this.requestIP(req)?.address,
+          getClientAddress: () => this.requestIP(req)?.address ?? "",
         });
   },
 });
