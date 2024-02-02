@@ -1,1 +1,5 @@
-<h1>Bun version is {Bun.version}</h1>
+<script>
+  export let data;
+</script>
+
+<h1>Bun version is {data.version}</h1>
