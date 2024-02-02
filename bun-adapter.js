@@ -31,7 +31,6 @@ export default (opts = {}) => {
         index
           .replace("MANIFEST", `${server}/manifest.js`)
           .replace("SERVER", `${server}/index.js`)
-          .replace("CLIENT_DIRECTORY", builder.getClientDirectory())
       );
 
       Bun.spawn(
